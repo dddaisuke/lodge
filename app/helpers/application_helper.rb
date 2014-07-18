@@ -103,4 +103,7 @@ module ApplicationHelper
     text.gsub(/(```[^:\r\n]*):([^\n\r]+)(\r|\n)/, "#{'\1'}\n@@@#{'\2'}@@@\n")
   end
 
+  def root_css_class_name
+    %Q|#{controller_path.gsub("/", "_")}_controller #{action_name}_action|
+  end
 end
